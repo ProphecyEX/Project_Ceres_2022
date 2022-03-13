@@ -92,8 +92,7 @@ void Render()
 	glLightfv(GL_LIGHT0, GL_DIFFUSE, light_diff);
 	GLfloat light_amb[] = { 1.0, 1.0, 1.0, 1.0 }; //Set global illumination
 	glLightfv(GL_LIGHT0, GL_AMBIENT, light_amb);
-
-	
+		
 	glPushMatrix(); // Planet earth setup
 	glRotatef(rotEarthX, 0, 1, 0);
 	glTranslatef(60, 0, -10.0);
@@ -101,11 +100,10 @@ void Render()
 	glColor3f(0.3, 0.3, 1);                            
 	gluSphere(quadric, 5, 36, 18);
 	glPopMatrix();
-		
-
+	
 	glPushMatrix();// Moon setup
+	glRotatef(rotMoonX, 0, 1, 0);
 	glTranslatef(70, 0, -10.0);
-	glRotated((GLdouble)360 * 2, 0, 1, 0.0);
 	glRotatef(rotMoonX, 1, 0, 0);
 	glColor3f(0, 1, 0);                            
 	gluSphere(quadric, 1, 36, 18);
